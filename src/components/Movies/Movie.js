@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import MovieCard from './MovieCard';
-import loader from '../../common/loading.gitf'
+import loader from '../../common/loading.gif'
 
 const ALLMOVIES = gql `
     query{
@@ -19,19 +19,18 @@ export default class Movies extends Component{
     render(){
         return(
             <div className="container">
-                <div className="row">
-                    <Query query = {ALLMOVIES}>
+                <Query query = {ALLMOVIES}>
                        {
                            ({data, error, loading}) => {
-                               if(error) return <h4>Hubo un error</h4>
-                               if(loading) return <img src="../../common/loading.gif"/>
+                               if(error) return <h4>{error}</h4>
+                               if(loading) return <img src={loader}/>
                                const movie = data.Movie.map((movie, index) => (
-                                   <div index={index}>
-                                    <MovieCard
-                                        id={movie._id}
-                                        title={movie.title}
-                                        // first_name={movie.author.first_name}
-                                    />
+                                   <div className="row" index={index}>
+                                        {/* <MovieCard
+                                            id={movie._id}
+                                            title={movie.title}
+                                            // first_name={movie.author.first_name}
+                                        /> */}
                                    </div>
                                ))
                                 return(
@@ -41,8 +40,7 @@ export default class Movies extends Component{
                                 )
                            }
                        } 
-                    </Query>
-                </div>
+                </Query>
             </div>
         )
     }

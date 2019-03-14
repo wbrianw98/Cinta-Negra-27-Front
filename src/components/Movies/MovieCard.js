@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 
 export default class MovieCard extends Component {
     render() { 
         return (
             <div className="card">
                 <div className="card-title">
-                    <a href={`/movie/${this.props.id}`}>
+                    <link href={`/movie/${this.props.id}`}>
                         <h1>{this.props.title}</h1>
-                    </a>
+                    </link>
                 </div>
                 <div className="card-content">
-                    <span className="card-title">
+                    <span className="card-text">
                         {this.props.first_name}
                     </span>
                 </div>

@@ -1,0 +1,18 @@
+.login-view{
+    border:solid 1px blue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://www.publico.es/files/article_main/uploads/2018/10/31/5bd9db4210a0e.jpg");
+}
+.form-login{
+    border:solid 1px red;
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+}

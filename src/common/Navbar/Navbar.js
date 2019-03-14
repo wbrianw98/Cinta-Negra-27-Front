@@ -17,13 +17,13 @@ class Navbar extends Component {
             return(
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/me">
+                        <Link className="nav-link" to={`/users/${payload()._id}`}>
                             Bienvenido {payload().first_name}
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/create-Movie">
-                            New Movie
+                        <a className="nav-link" href="/create-movie">
+                            Nueva Pelicula
                         </a>
                     </li>
                     <li className="nav-item">
@@ -59,7 +59,7 @@ class Navbar extends Component {
                     className="navbar-brand"
                     to="/"
                 >
-                    Netflix
+                Netflix
                 </Link>
                 <button
                     className="navbar-toggler"
